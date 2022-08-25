@@ -2,7 +2,7 @@
 
 <% @lists.each do |list| %>
   <div class="card-list">
-    <p><%= list.name %></p>
+    <p><%= link_to list.name, list_path(list) %></p>
     <p><%= list.description %></p>
   </div>
 <% end %>
