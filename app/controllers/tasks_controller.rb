@@ -28,6 +28,12 @@ class TasksController < ApplicationController
     end
   end
 
+  def destroy
+    @task.destroy
+
+    redirect_to list_path(@task.list_id), status: :see_other
+  end
+
   private
 
   def set_list
