@@ -1,0 +1,5 @@
+<h1>Edit task</h1>
+
+<%= render 'form', list: @list, task: @task %>
+
+<%= link_to 'Back', list_path(@task.list_id) %>

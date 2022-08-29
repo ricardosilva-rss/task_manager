@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_list, only: %i[new create]
+  before_action :set_task, only: %i[edit update destroy]
 
   def new
     @task = Task.new
@@ -16,10 +17,25 @@ class TasksController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @task.update(task_params)
+      redirect_to list_path(@task.list_id)
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   private
 
   def set_list
     @list = List.find(params[:list_id])
+  end
+
+  def set_task
+    @task = Task.find(params[:id])
   end
 
   def task_params

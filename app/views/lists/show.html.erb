@@ -3,8 +3,9 @@
 
 <% @list.tasks.each do |task| %>
   <div class="card-task">
-    <%= task.title %>
-    <%= task.description %>
+    <p><%= task.title %></p>
+    <p><%= task.description %></p>
+    <p><%= link_to 'Edit task', edit_task_path(task) %></p>
   </div>
 <% end %>
 

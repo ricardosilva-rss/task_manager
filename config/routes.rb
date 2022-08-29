@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   resources :lists do
     resources :tasks, only: %i[new create]
   end
+  resources :tasks, only: %i[edit update destroy]
 end
