@@ -5,8 +5,8 @@
   <% @list.tasks.each do |task| %>
     <div class="card-task">
       <div class="task-links">
-        <p><%= link_to edit_task_path(task) do %><i class="fa-solid fa-marker"></i><% end %></p>
-        <p><%= link_to task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %><i class="fa-solid fa-trash-can"></i><% end %></p>
+        <%= link_to edit_task_path(task) do %><i class="fa-solid fa-marker"></i><% end %>
+        <%= link_to task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %><i class="fa-solid fa-trash-can"></i><% end %>
       </div>
       <div class="task-info">
         <h2><%= task.title %></h2>

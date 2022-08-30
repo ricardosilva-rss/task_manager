@@ -9,23 +9,32 @@
 }
 
 .card-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-list-info {
   width: 300px;
   height: 150px;
   padding: 10px;
-  margin: 5px;
-  border: 1px solid black;
-  border-radius: 10px;
+  margin: 5px 5px 0 5px;
+  border-radius: 10px 10px 0 0;
   text-decoration: none;
   text-align: center;
   color: white;
   background-color: orange;
 }
 
-.list-links {
-  display: flex;
-  justify-content: end;
+.card-list-links {
+  text-align: end;
+  position: relative;
+  padding: 0 10px 0 10px;
+  margin: 0 5px 0 5px;
+  border: 1px solid orange;
+  border-radius: 0 0 10px 10px;
 
   a {
     margin: 5px;
+    color: black;
   }
 }
