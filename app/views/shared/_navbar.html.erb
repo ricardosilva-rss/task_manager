@@ -1,7 +1,6 @@
-<% if current_page?(:controller => 'lists', :action => 'show') %>
-  <%= link_to 'Home', lists_path, class:"btn btn-primary" %>
-  <%= link_to 'Add task', new_list_task_path(@list), class:"btn btn-primary" %>
-<% else %>
-  <%= link_to 'Home', lists_path, class:"btn btn-primary" %>
-  <%= link_to 'Create new list', new_list_path, class:"btn btn-primary" %>
-<% end %>
+<%= link_to 'Home', lists_path, class:"btn btn-primary" %>
+  <% if params[:controller] == 'lists' && %w(index new edit).include?(params[:action]) %>
+    <%= link_to 'Create new list', new_list_path, class:"btn btn-primary" %>
+  <% elsif params[:controller] == 'lists' && %w(show).include?(params[:action]) %>
+      <%= link_to 'Add task', new_list_task_path(@list), class:"btn btn-primary" %>
+  <% end %>
