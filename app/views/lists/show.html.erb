@@ -1,14 +1,23 @@
 <h1><%= @list.name %></h1>
 <p><%= @list.description %></p>
 
-<% @list.tasks.each do |task| %>
-  <div class="card-task">
-    <p><%= task.title %></p>
-    <p><%= task.description %></p>
-    <p><%= link_to 'Edit task', edit_task_path(task) %></p>
-    <p><%= link_to 'Delete task', task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
-  </div>
-<% end %>
+<div class="cards-task">
+  <% @list.tasks.each do |task| %>
+    <div class="card-task">
+      <h2><%= task.title %></h2>
+      <p><%= task.description %></p>
+      <% if params[:location].nil? %>
+        <p><%= task.location %></p>
+      <% end %>
+      <% if params[:date].nil? %>
+        <p><%= task.date %></p>
+      <% end %>
+
+      <p><%= link_to 'Edit task', edit_task_path(task) %></p>
+      <p><%= link_to 'Delete task', task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+    </div>
+  <% end %>
+</div>
 
 <%= link_to 'Edit list', edit_list_path(@list) %>
 <%= link_to 'Delete list', list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
