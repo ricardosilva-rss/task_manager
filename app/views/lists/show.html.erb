@@ -11,6 +11,7 @@
       <div class="task-info">
         <h2><%= task.title %></h2>
         <p><%= task.description %></p>
+        <p id="hide-info"><%= task.card_color %></p>
         <% if params[:location].nil? %>
           <p><%= task.location %></p>
         <% end %>

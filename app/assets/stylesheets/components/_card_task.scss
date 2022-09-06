@@ -18,7 +18,7 @@
   text-decoration: none;
   text-align: center;
   color: black;
-  background-color: rgb(252, 252, 140);
+  background-color: #FCF595;
 }
 
 .task-links {
@@ -27,4 +27,8 @@
   a {
     margin: 5px;
   }
+}
+
+#hide-info {
+  display: none;
 }
