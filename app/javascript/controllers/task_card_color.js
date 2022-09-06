@@ -1,18 +1,28 @@
-const cardTask = document.querySelectorAll(".card-task")
+const cardTask = document.querySelectorAll(".card-task");
 
-cardTask.forEach((task) => {
-  const a = task.children("div.task-info");
-  // const b = a[1];
-  // const colorValue = color.innerHTML;
-  console.log(a);
-});
+cardTask.forEach((card) => {
+  const element = card.querySelector("#card-color");
+  const colorValue = element.innerHTML;
 
-// if (colorValue === "#A5E5EB") {
-//   cardTask.classList.add("blue-card");
-// } else if (colorValue === "#C8F047") {
-//   cardTask.classList.add("green-card");
-// } else if (colorValue === "#EABAC8") {
-//   cardTask.classList.add("pink-card");
-// }
-
-// console.log(cardTask);
+  if (colorValue === "yellow") {
+    card.classList.remove("blue-card");
+    card.classList.remove("green-card");
+    card.classList.remove("pink-card");
+    card.classList.add("yellow-card");
+  } else if (colorValue === "blue") {
+    card.classList.remove("yellow-card");
+    card.classList.remove("green-card");
+    card.classList.remove("pink-card");
+    card.classList.add("blue-card");
+  } else if (colorValue === "green") {
+    card.classList.remove("yellow-card");
+    card.classList.remove("blue-card");
+    card.classList.remove("pink-card");
+    card.classList.add("green-card");
+  } else if (colorValue === "pink") {
+    card.classList.remove("yellow-card");
+    card.classList.remove("blue-card");
+    card.classList.remove("green-card");
+    card.classList.add("pink-card");
+  }
+})

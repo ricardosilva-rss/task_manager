@@ -2,7 +2,7 @@
 <p><%= @list.description %></p>
 
 <div class="cards-task">
-  <% @list.tasks.each do |task| %>
+  <% @list.tasks.sort_by(&:title).each do |task| %>
     <div class="card-task">
       <div class="task-links">
         <%= link_to edit_task_path(task) do %><i class="fa-solid fa-marker"></i><% end %>
@@ -11,7 +11,7 @@
       <div class="task-info">
         <h2><%= task.title %></h2>
         <p><%= task.description %></p>
-        <p id="hide-info"><%= task.card_color %></p>
+        <p id="card-color"><%= task.card_color %></p>
         <% if params[:location].nil? %>
           <p><%= task.location %></p>
         <% end %>

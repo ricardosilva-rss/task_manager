@@ -3,5 +3,5 @@ class Task < ApplicationRecord
 
   validates :title, presence: true
   validates :description, presence: true
-  validates :card_color, inclusion: ["#FCF595", "#A5E5EB", "#C8F047", "#EABAC8"]
+  validates :card_color, inclusion: ["yellow", "blue", "green", "pink"]
 end
