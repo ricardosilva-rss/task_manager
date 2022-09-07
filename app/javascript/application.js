@@ -3,4 +3,4 @@ import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
 
-import "./controllers/task_card_color_controller"
+import "./controllers/card_color_task_controller"

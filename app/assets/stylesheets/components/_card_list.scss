@@ -39,3 +39,26 @@
     color: orange;
   }
 }
+
+// p with card color info
+// it was the only way to access the info for JS
+#card-color-list {
+  display: none;
+}
+
+// colors for user to choose
+.orange-card {
+  background-color: orange;
+}
+
+.red-card {
+  background-color: red;
+}
+
+.gray-card {
+  background-color: gray;
+}
+
+.black-card {
+  background-color: black;
+}

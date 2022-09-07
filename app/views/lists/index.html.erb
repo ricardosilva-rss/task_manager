@@ -1,12 +1,13 @@
 <h1>My lists</h1>
 
 <div class="cards-list">
-  <% @lists.each do |list| %>
+  <% @lists.sort_by(&:name).each do |list| %>
     <div class="card-list">
       <%= link_to list_path(list) do %>
         <div class="card-list-info">
           <h2><%= list.name %></h2>
           <p><%= list.description %></p>
+          <p id="card-color-list"><%= list.card_color %></p>
         </div>
       <% end %>
         <div class="card-list-links">

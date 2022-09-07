@@ -1,7 +1,7 @@
 const cardTask = document.querySelectorAll(".card-task");
 
 cardTask.forEach((card) => {
-  const element = card.querySelector("#card-color");
+  const element = card.querySelector("#card-color-task");
   const colorValue = element.innerHTML;
 
   if (colorValue === "yellow") {

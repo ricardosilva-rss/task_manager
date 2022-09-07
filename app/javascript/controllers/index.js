@@ -4,5 +4,11 @@
 
 import { application } from "./application"
 
+import CardColorListController from "./card_color_list_controller"
+application.register("card-color-list", CardColorListController)
+
+import CardColorTaskController from "./card_color_task_controller"
+application.register("card-color-task", CardColorTaskController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
