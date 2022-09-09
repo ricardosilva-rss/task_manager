@@ -1,33 +1,56 @@
-const cardList = document.querySelectorAll(".card-list-info");
-const linkList = document.querySelectorAll(".card-list-links");
+const cardList = document.querySelectorAll(".card-list");
 
-linkList.forEach((link) => {
-  console.dir(link);
-})
-
-cardList.forEach((card) => {
+cardList.forEach(card => {
+  const cardInfo = card.querySelector(".card-list-info");
   const element = card.querySelector("#card-color-list");
   const colorValue = element.innerHTML;
 
+  const linksList = card.querySelector(".card-list-links");
+  const links = linksList.getElementsByTagName("a");
+
   if (colorValue === "orange") {
-    card.classList.remove("red-card");
-    card.classList.remove("gray-card");
-    card.classList.remove("black-card");
-    card.classList.add("orange-card");
+    cardInfo.classList.remove("red-card");
+    cardInfo.classList.remove("gray-card");
+    cardInfo.classList.remove("black-card");
+    cardInfo.classList.add("orange-card");
+    for (const a of links) {
+      a.classList.remove("red-card");
+      a.classList.remove("gray-card");
+      a.classList.remove("black-card");
+      a.classList.add("orange-card");
+    }
   } else if (colorValue === "red") {
-    card.classList.remove("orange-card");
-    card.classList.remove("gray-card");
-    card.classList.remove("black-card");
-    card.classList.add("red-card");
+    cardInfo.classList.remove("orange-card");
+    cardInfo.classList.remove("gray-card");
+    cardInfo.classList.remove("black-card");
+    cardInfo.classList.add("red-card");
+    for (const a of links) {
+      a.classList.remove("orange-card");
+      a.classList.remove("gray-card");
+      a.classList.remove("black-card");
+      a.classList.add("red-card");
+    }
   } else if (colorValue === "gray") {
-    card.classList.remove("orange-card");
-    card.classList.remove("red-card");
-    card.classList.remove("black-card");
-    card.classList.add("gray-card");
+    cardInfo.classList.remove("orange-card");
+    cardInfo.classList.remove("red-card");
+    cardInfo.classList.remove("black-card");
+    cardInfo.classList.add("gray-card");
+    for (const a of links) {
+      a.classList.remove("orange-card");
+      a.classList.remove("red-card");
+      a.classList.remove("black-card");
+      a.classList.add("gray-card");
+    }
   } else if (colorValue === "black") {
-    card.classList.remove("orange-card");
-    card.classList.remove("red-card");
-    card.classList.remove("gray-card");
-    card.classList.add("black-card");
+    cardInfo.classList.remove("orange-card");
+    cardInfo.classList.remove("red-card");
+    cardInfo.classList.remove("gray-card");
+    cardInfo.classList.add("black-card");
+    for (const a of links) {
+      a.classList.remove("orange-card");
+      a.classList.remove("red-card");
+      a.classList.remove("gray-card");
+      a.classList.add("black-card");
+    }
   }
 })
